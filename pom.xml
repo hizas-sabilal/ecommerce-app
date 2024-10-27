@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ecommerce</groupId>
+    <artifactId>purwadhika-ecommerce-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+<!--        <module>order-service</module>-->
+<!--        <module>order-service/order-domain</module>-->
+<!--        <module>order-service/order-application</module>-->
+<!--        <module>order-service/order-dataaccess</module>-->
+<!--        <module>order-service/order-domain/order-application-service</module>-->
+<!--        <module>order-service/order-domain/order-domain-core</module>-->
+        <module>common-service</module>
+        <module>common-service/common-domain</module>
+        <module>inventory-service</module>
+        <module>inventory-service/inventory-application</module>
+        <module>inventory-service/inventory-container</module>
+        <module>inventory-service/inventory-dataaccess</module>
+        <module>inventory-service/inventory-domain</module>
+        <module>inventory-service/inventory-domain/inventory-domain-core</module>
+        <module>inventory-service/inventory-domain/inventory-application-service</module>
+        <module>inventory-service/inventory-messaging</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Add this new section -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.ferstl</groupId>
+                <artifactId>depgraph-maven-plugin</artifactId>
+                <version>4.0.3</version>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- End of added section -->
+
+</project>
