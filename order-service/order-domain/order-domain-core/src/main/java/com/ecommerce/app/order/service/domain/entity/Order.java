@@ -1,4 +1,4 @@
-package com.ecommerce.app.order.service.domain.entity;
+package com.ecommerce.order.service.domain.entity;
 
 public class Order {
 }

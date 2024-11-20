@@ -2,9 +2,9 @@ package com.ecommerce.common.valueobject;
 
 import java.util.UUID;
 
-public class ProductId extends BaseId<UUID> {
+public class SkuId extends BaseId<UUID> {
 
-    public ProductId(UUID value){
+    public SkuId(UUID value){
         super(value);
     }
 

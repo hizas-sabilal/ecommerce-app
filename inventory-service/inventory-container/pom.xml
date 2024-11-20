@@ -4,46 +4,62 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.ecommerce</groupId>
-        <artifactId>purwadhika-ecommerce-project</artifactId>
+        <groupId>com.ecommerce</groupId>
+        <artifactId>inventory-service</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>inventory-container</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>org.ecommerce</groupId>
+            <groupId>com.ecommerce</groupId>
             <artifactId>inventory-domain-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.ecommerce</groupId>
+            <groupId>com.ecommerce</groupId>
             <artifactId>inventory-application-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.ecommerce</groupId>
+            <groupId>com.ecommerce</groupId>
             <artifactId>inventory-application</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.ecommerce</groupId>
+            <groupId>com.ecommerce</groupId>
             <artifactId>inventory-dataaccess</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.ecommerce</groupId>
+            <groupId>com.ecommerce</groupId>
             <artifactId>inventory-messaging</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>${project.groupId}/inventory.service:${project.version}</name>
+                    </image>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

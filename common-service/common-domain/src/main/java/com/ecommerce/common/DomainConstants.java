@@ -1,0 +1,9 @@
+package com.ecommerce.common;
+
+public class DomainConstants {
+
+    private DomainConstants() {
+    }
+
+    public static final String UTC = "UTC";
+}
